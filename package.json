@@ -1,20 +1,25 @@
 {
-  "name": "141",
+  "name": "geo-monitor-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "GEO auto article-image generation monitoring backend",
+  "main": "src/server.js",
   "scripts": {
-    "test": "node test.js"
+    "start": "node src/server.js",
+    "test": "node test/server.test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xiongjiahao123/141.git"
+    "url": "git+https://github.com/xiongjiahao123/git.kangqiao.vip.git"
   },
-  "keywords": [],
+  "keywords": [
+    "geo",
+    "monitoring",
+    "content-generation"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xiongjiahao123/141/issues"
+    "url": "https://github.com/xiongjiahao123/git.kangqiao.vip/issues"
   },
-  "homepage": "https://github.com/xiongjiahao123/141#readme"
+  "homepage": "https://github.com/xiongjiahao123/git.kangqiao.vip#readme"
 }
