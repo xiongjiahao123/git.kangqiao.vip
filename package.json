@@ -1,0 +1,20 @@
+{
+  "name": "141",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiongjiahao123/141.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiongjiahao123/141/issues"
+  },
+  "homepage": "https://github.com/xiongjiahao123/141#readme"
+}
