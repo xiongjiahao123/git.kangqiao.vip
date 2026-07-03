@@ -11,6 +11,13 @@ function request(baseUrl, path, options = {}) {
   }));
 }
 
+function requestText(baseUrl, path) {
+  return fetch(`${baseUrl}${path}`).then(async response => ({
+    status: response.status,
+    body: await response.text()
+  }));
+}
+
 (async () => {
   jobs.clear();
   const server = createServer();
@@ -19,6 +26,10 @@ function request(baseUrl, path, options = {}) {
   const baseUrl = `http://127.0.0.1:${port}`;
 
   try {
+    const home = await requestText(baseUrl, '/');
+    assert.strictEqual(home.status, 200);
+    assert.ok(home.body.includes('康桥数智'));
+
     const health = await request(baseUrl, '/health');
     assert.strictEqual(health.status, 200);
     assert.strictEqual(health.body.status, 'ok');

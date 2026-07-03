@@ -86,3 +86,7 @@ GET /api/metrics
 ```bash
 npm test
 ```
+
+## kangqiaoai.vip 首页
+
+仓库根目录的 `index.html` 是 `https://www.kangqiaoai.vip/` 的首页落地页，当前品牌文案为「康桥数智」。Node 服务启动后会在 `/` 和 `/index.html` 返回该页面，同时保留 `/api/*` 监测接口。

@@ -1,7 +1,10 @@
 const http = require('http');
+const fs = require('fs');
+const pathModule = require('path');
 const { randomUUID } = require('crypto');
 
 const PORT = Number(process.env.PORT || 3000);
+const PUBLIC_INDEX = pathModule.join(__dirname, '..', 'index.html');
 const STATUS_FLOW = ['queued', 'generating', 'reviewing', 'published'];
 const jobs = new Map();
 
@@ -12,6 +15,14 @@ function sendJson(res, statusCode, payload) {
     'Content-Length': Buffer.byteLength(body)
   });
   res.end(body);
+}
+
+function sendHtml(res, statusCode, html) {
+  res.writeHead(statusCode, {
+    'Content-Type': 'text/html; charset=utf-8',
+    'Content-Length': Buffer.byteLength(html)
+  });
+  res.end(html);
 }
 
 function parseBody(req) {
@@ -120,6 +131,11 @@ function getMetrics() {
 async function handleRequest(req, res) {
   const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
   const path = url.pathname;
+
+  if (req.method === 'GET' && (path === '/' || path === '/index.html')) {
+    sendHtml(res, 200, fs.readFileSync(PUBLIC_INDEX, 'utf8'));
+    return;
+  }
 
   if (req.method === 'GET' && path === '/health') {
     sendJson(res, 200, { status: 'ok', service: 'geo-monitor-backend', timestamp: new Date().toISOString() });
