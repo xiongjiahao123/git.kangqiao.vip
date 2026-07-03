@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#0f3d33"/>
+  <circle cx="376" cy="122" r="72" fill="#d8aa47" opacity="0.9"/>
+  <path d="M112 338c52-120 114-180 186-180 42 0 78 20 102 58-70 8-126 48-168 122H112z" fill="#bfe8d7"/>
+  <text x="86" y="276" fill="#fffaf0" font-size="96" font-family="Arial, sans-serif" font-weight="800">KQ</text>
+  <text x="142" y="388" fill="#d8aa47" font-size="54" font-family="Arial, sans-serif" font-weight="800">AI</text>
+</svg>

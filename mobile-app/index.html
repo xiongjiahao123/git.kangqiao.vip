@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f3d33">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="康桥数智">
+  <title>康桥数智</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero panel">
+      <div class="hero-mark">KQ</div>
+      <p class="eyebrow">GEO CONTENT COMMAND</p>
+      <h1>康桥数智</h1>
+      <p class="hero-copy">面向医疗健康内容团队的图文生成、GEO 优化和任务监测 APP。</p>
+      <div class="hero-actions">
+        <button class="primary" data-tab="create">新建任务</button>
+        <button class="secondary" data-tab="monitor">查看监测</button>
+      </div>
+    </section>
+
+    <nav class="tabbar" aria-label="主导航">
+      <button class="tab active" data-tab="dashboard">首页</button>
+      <button class="tab" data-tab="monitor">监测</button>
+      <button class="tab" data-tab="create">生成</button>
+      <button class="tab" data-tab="profile">我的</button>
+    </nav>
+
+    <section id="dashboard" class="screen active">
+      <div class="metric-grid">
+        <article class="metric panel"><strong>24</strong><span>今日任务</span></article>
+        <article class="metric panel"><strong>96%</strong><span>发布成功率</span></article>
+        <article class="metric panel"><strong>2.4s</strong><span>平均生成</span></article>
+      </div>
+      <div class="panel feature-panel">
+        <h2>今日建议</h2>
+        <p>优先生成「基层医疗 AI」「慢病管理」「儿童肥胖」三类内容，适合公众号和视频号同步发布。</p>
+      </div>
+    </section>
+
+    <section id="monitor" class="screen">
+      <div class="screen-title">
+        <h2>任务监测</h2>
+        <span>实时状态</span>
+      </div>
+      <div id="jobList" class="job-list"></div>
+    </section>
+
+    <section id="create" class="screen">
+      <div class="screen-title">
+        <h2>生成图文</h2>
+        <span>GEO 草案</span>
+      </div>
+      <form id="createForm" class="panel form-panel">
+        <label>关键词<input id="keyword" placeholder="例如：基层医疗 AI" required></label>
+        <label>图文主题<textarea id="topic" placeholder="例如：AI 医疗科普图文" required></textarea></label>
+        <label>发布渠道<select id="channel"><option>微信公众号</option><option>视频号</option><option>官网资讯</option></select></label>
+        <button class="primary" type="submit">生成任务草案</button>
+      </form>
+      <article id="preview" class="panel preview hidden"></article>
+    </section>
+
+    <section id="profile" class="screen">
+      <div class="panel profile-card">
+        <div class="avatar">AI</div>
+        <h2>康桥数智 工作台</h2>
+        <p>连接后端监测服务后，可同步真实任务、指标和失败告警。</p>
+      </div>
+      <div class="panel settings">
+        <div><span>APP 版本</span><b>1.0.0</b></div>
+        <div><span>后端地址</span><b>localhost:3000</b></div>
+        <div><span>运行模式</span><b>PWA 原型</b></div>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
